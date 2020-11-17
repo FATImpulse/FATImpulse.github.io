@@ -3,10 +3,13 @@
 Go to https://fatimpulse.github.io to view website.
 
 Project View Decending Order: 
-    - circles.js          Author: John Li
-    - home.js             Author: John Li
-    - login.js            Author: John Li
-    - matchingShapes.js   Author: 
-    - objectsInMotion.js  Author: April St. Onge
-    - start.js            Author: John Li
-    - zipper.js           Author: 
+
+File Name | Author
+----------|--------
+circles.js | John Li
+home.js | John Li
+login.js | John Li
+matchingShapes.js | Angelina
+objectsInMotion.js | April St. Onge
+start.js | John Li
+zipper.js | Aztlan
