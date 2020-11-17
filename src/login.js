@@ -40,7 +40,7 @@ function Login() {
         fill('#707070');
         text('Welcome',(473/1280)*width,(245/720)*height);
 
-        textSize(21);
+        textSize((21*height*width)/(1290*720));
         textStyle(NORMAL);
         text('What should we call you?',(525/1280)*width,300/720*height);
 
@@ -79,8 +79,10 @@ function Login() {
     }
 
     function loginBtn() {
+
         var btnX = 135/1280*width, btnY = 52/720*height, 
         posX = 573/1280*width, posY = 435/720*height;
+
         if(mouseX > posX && mouseX < posX + btnX && mouseY > posY && mouseY < posY + btnY) {
             fill('#3F334D');
             onBtn = true;
@@ -88,6 +90,7 @@ function Login() {
             fill('#B696DB');
             onBtn = false;
         }
+        
         noStroke();
         rect(posX,posY,btnX,btnY,(20*height*width)/(1290*720));
 

@@ -22,7 +22,7 @@ function MatchingShapes() {
 
 
     this.enter = function() {
-        createCanvas(800, 800);
+        createCanvas(windowWidth, windowHeight);
         
         //RATIO USED HERE
         //Diamater and radius
