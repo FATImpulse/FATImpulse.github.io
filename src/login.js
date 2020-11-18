@@ -42,7 +42,7 @@ function Login() {
 
         textSize((21*height*width)/(1290*720));
         textStyle(NORMAL);
-        text('What should we call you?',(525/1280)*width,300/720*height);
+        text('What should we call you?',(508/1280)*width,300/720*height);
 
         textBox();
 
