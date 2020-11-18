@@ -2,6 +2,7 @@
 
 function Zipper() {
 
+  
   this.enter = function() {
     createCanvas(windowWidth, windowHeight);
   }

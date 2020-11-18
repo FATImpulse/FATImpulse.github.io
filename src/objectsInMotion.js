@@ -2,22 +2,20 @@
 
 function ObjectsInMotion() {
 
-    this.setup = function(){
-    createCanvas(400, 400);
-    frameRate(300);
-    circleX = 50;
-    circleY = 50;
-    xdirection = 1.5;
-    ydirection = 1;
-    xCircle = 350;
-    yCircle = 50;
-    xdirection2 = 1;
-    ydirection2 = 2;
-
+    this.enter = function() {
+        createCanvas(400, 400);
+        frameRate(300);
+        circleX = 50;
+        circleY = 50;
+        xdirection = 1.5;
+        ydirection = 1;
+        xCircle = 350;
+        yCircle = 50;
+        xdirection2 = 1;
+        ydirection2 = 2;
     }
 
-    this.draw = function() 
-    {
+    this.draw = function() {
     background(220);
     fill(0);
     textSize(30);

@@ -1,6 +1,7 @@
 function Home() {
 
     var onBtn1 = false, onBtn2 = false, onBtn3 = false;
+    var caseI = 0;
 
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);
@@ -22,9 +23,9 @@ function Home() {
         textSize((150*height*width)/(1920*1080));
         text('Play Room',660/1920*width,250/1080*height);
 
-        drawBtn(152/1920*width, 384/1080*height, "Matching Shapes", 40, 250, onBtn1);
-        drawBtn(735/1920*width, 384/1080*height, "Picking Up Objects In Motion", 30, 800, onBtn2);
-        drawBtn(1315/1920*width, 384/1080*height, "Zipping and Unzipping", 37, 1390, onBtn3);
+        drawBtn(152/1920*width, 384/1080*height, "Matching Shapes", 40, 250, 1);
+        drawBtn(735/1920*width, 384/1080*height, "Picking Up Objects In Motion", 30, 800, 2);
+        drawBtn(1315/1920*width, 384/1080*height, "Zipping and Unzipping", 37, 1390, 3);
     }
 
     function drawBtn(x,y,z,i,j,bool) {
@@ -36,19 +37,36 @@ function Home() {
 
         if(mouseX > xPos && mouseX < xPos + btnX && mouseY > yPos && mouseY < yPos + btnY) {
             fill('#3F334D');
-            bool = true;
+            if(bool = 1) {
+                onBtn1 = true;
+            }
+            if(bool = 2) {
+                onBtn2 = true;
+            }
+            if(bool = 3) {
+                onBtn3 = true;
+            }
         }else{
             fill('#C0C5C1');
-            bool = false;
+            if(bool = 1) {
+                onBtn2 = false;
+                onBtn3 = false;
+            }
+            if(bool = 2) {
+                onBtn1 = false;
+                onBtn3 = false;
+            }
+            if(bool = 3) {
+                onBtn1 = false;
+                onBtn2 = false;
+            }
         }
         rect(x,2*y,btnX,btnY/4,0,0,(20*height*width)/(1920*1080),(20*height*width)/(1920*1080));
 
         if(mouseX > xPos && mouseX < xPos + btnX && mouseY > yPos && mouseY < yPos + btnY) {
             fill('#FFFFFF');
-            bool = true;
         }else{
             fill('#574B60');
-            bool = false;
         }
         textSize((i*height*width)/(1920*1080));
         textStyle(BOLD);
@@ -59,10 +77,10 @@ function Home() {
         if(onBtn1) {
             this.sceneManager.showScene(MatchingShapes);
         }
-        else if(onBtn2) {
+        if(onBtn2) {
             this.sceneManager.showScene(ObjectsInMotion);
         }
-        else if(onBtn3) {
+        if(onBtn3) {
             this.sceneManager.showScene(Zipper);
         }
     }

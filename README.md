@@ -9,7 +9,7 @@ File Name | Author
 circles.js | John Li
 home.js | John Li
 login.js | John Li
-matchingShapes.js | Angelina
+matchingShapes.js | Angelina Brasen
 objectsInMotion.js | April St. Onge
 start.js | John Li
-zipper.js | Aztlan
+zipper.js | Aztlan Olmedo
