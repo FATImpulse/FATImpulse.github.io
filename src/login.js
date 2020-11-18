@@ -36,7 +36,6 @@ function Login() {
 
         textSize((66*height*width)/(1290*720));
         textStyle(BOLD);
-        textFont('Helvetica Neue');
         fill('#707070');
         text('Welcome',(473/1280)*width,(245/720)*height);
 
