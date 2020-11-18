@@ -35,6 +35,7 @@ function Login() {
         rect(width*(381/1280),height*(136/720),width*(519/1280),height*(449/720),(20*height*width)/(1290*720));
 
         textSize((66*height*width)/(1290*720));
+        textFont('Arial');
         textStyle(BOLD);
         fill('#707070');
         text('Welcome',(473/1280)*width,(245/720)*height);
