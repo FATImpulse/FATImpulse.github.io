@@ -54,7 +54,7 @@ function ObjectsInMotion() {
     
     if(mouseIsPressed)
         {
-        if((mouseX >= circleX-50 &&     mouseX<=circleX+50 && mouseY>=circleY-50 && mouseY<=circleY+50))
+        if((mouseX >= circleX-50 && mouseX<=circleX+50) && (mouseY>=circleY-50 && mouseY<=circleY+50))
             {          
                 background(25,200, 25);
                 fill(0);
@@ -63,7 +63,7 @@ function ObjectsInMotion() {
                 
             }
             
-        else if(mouseY >= yCircle-50 && mouseY <=yCircle+50 && mouseX >= xCircle-50 && mouseX<= yCircle+50)
+        else if(mouseY >= yCircle-50 && mouseY <=yCircle+50) && (mouseX >= xCircle-50 && mouseX<= xCircle+50))
             {
                 background(25,200,25);
                 fill(0);
