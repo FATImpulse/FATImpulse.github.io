@@ -1,7 +1,6 @@
 function Login() {
 
     var onBtn = false;
-    var arr = [];
 
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);
@@ -24,25 +23,23 @@ function Login() {
 
     }
 
-    function moveCircles() {
-
-    }
-
     function drawBox() {
         fill('#FFFFFF');
         //stroke(0.1);
         noStroke();
-        rect(width*(381/1280),height*(136/720),width*(519/1280),height*(449/720),(20*height*width)/(1290*720));
+        rect1 = rect(width/2-width*(519/1280)/2,height*(136/720),width*(519/1280),height*(449/720),(20*height*width)/(1290*720));
 
         textSize((66*height*width)/(1290*720));
         textFont('Arial');
         textStyle(BOLD);
         fill('#707070');
-        text('Welcome',(473/1280)*width,(245/720)*height);
+        let str = "Welcome";
+        text(str,width/2-textWidth(str)/2,(245/720)*height);
 
         textSize((21*height*width)/(1290*720));
         textStyle(NORMAL);
-        text('What should we call you?',(508/1280)*width,300/720*height);
+        str = 'What should we call you?';
+        text(str,width/2-textWidth(str)/2,300/720*height);
 
         textBox();
 
@@ -96,7 +93,8 @@ function Login() {
 
         fill('#FFFFFF');
         textSize((21*height*width)/(1290*720));
-        text('ENTER',603/1280*width,469/720*height);
+        let str = 'ENTER';
+        text(str,width/2-textWidth(str)/2,469/720*height);
     }
 
     this.mousePressed = function() {

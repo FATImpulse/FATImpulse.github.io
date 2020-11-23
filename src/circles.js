@@ -31,3 +31,7 @@ function Circles() {
         }
     }
 }
+
+class Circles {
+    constructor()
+}

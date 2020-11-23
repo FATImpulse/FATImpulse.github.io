@@ -35,7 +35,8 @@ function Home() {
         textStyle(BOLD);
         textFont('Arial');
         textSize((150*height*width)/(1920*1080));
-        text('Play Room',660/1920*width,250/1080*height);
+        let str = 'Play Room';
+        text(str,width/2-textWidth(str)/2,250/1080*height);
 
         drawBtn(152/1920*width, 384/1080*height, "Matching Shapes", 40, 250);
         drawBtn(735/1920*width, 384/1080*height, "Picking Up Objects In Motion", 30, 800);
@@ -64,7 +65,7 @@ function Home() {
         }
         textSize((i*height*width)/(1920*1080));
         textStyle(BOLD);
-        text(z, j/1920*width, 840/1080*height);
+        text(z, x+btnX/2-textWidth(z)/2, 840/1080*height);
     }
 
     this.mousePressed = function() {
