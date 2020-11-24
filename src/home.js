@@ -2,13 +2,25 @@ function Home() {
 
     var onBtn = false, onBtn1 = false, onBtn2 = false, onBtn3 = false;
     var obj = MatchingShapes;
+    var c, arr = [];
 
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);
-        background('#EAF0CE');
+        var x = 14, y = 7;
+        for(var i = 0; i <= x; i++) {
+            for(var j = 0; j<=y; j++) {
+                c = new Circles(i,j,random(15,45),random(['#FF6F36','#3CA1A2','#0C2845','#006C8E','#FFB029']));
+                arr.push(c);
+            }
+        }
     }
 
     this.draw = function() {
+        background('#EAF0CE');
+        arr.forEach(e => {
+            e.move();
+            e.show();
+        });
 
         if(mouseX > 152/1920*width && mouseX < 152/1920*width + 450/1920*width) {
             obj = MatchingShapes;

@@ -1,24 +1,27 @@
 function Login() {
 
     var onBtn = false;
+    var c;
+    var arr = [];
 
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);
-        background('#EAF0CE');
-
-        noStroke();
-        var x = 14;
-        var y = 7;
+        var x = 14, y = 7;
         for(var i = 0; i <= x; i++) {
             for(var j = 0; j<=y; j++) {
-                fill(random(['#FF6F36','#3CA1A2','#0C2845','#006C8E','#FFB029']));
-                circle(i*width/x,j*height/y,random((15*height*width)/(1290*720),(45*height*width)/(1290*720)));
+                c = new Circles(i,j,random(15,45),random(['#FF6F36','#3CA1A2','#0C2845','#006C8E','#FFB029']));
+                arr.push(c);
             }
         }
+
     }
 
     this.draw = function() {
-
+        background('#EAF0CE');
+        arr.forEach(e => {
+            e.move();
+            e.show();
+        });
         drawBox();
 
     }
@@ -44,6 +47,10 @@ function Login() {
         textBox();
 
         loginBtn();
+    }
+
+    function inputBox() {
+        
     }
 
     function textBox() {
