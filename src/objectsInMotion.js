@@ -63,7 +63,7 @@ function ObjectsInMotion() {
 
              }
 
-            else if(mouseY >= yCircle-50 && mouseY <=yCircle+50) && (mouseX >= xCircle-50 && mouseX<= xCircle+50))  //If the mouse wasn't clicked on the first circle it tests to see if the mouse is near the second circle
+            else if((mouseY >= yCircle-50 && mouseY <=yCircle+50) && (mouseX >= xCircle-50 && mouseX<= xCircle+50))  //If the mouse wasn't clicked on the first circle it tests to see if the mouse is near the second circle
              {
                     background(25,200,25);                                //Changes background color to green
                     fill(0);
