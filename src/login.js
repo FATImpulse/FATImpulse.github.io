@@ -1,30 +1,28 @@
 function Login() {
 
     var onBtn = false;
+    var c;
     var arr = [];
 
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);
-        background('#EAF0CE');
-
-        noStroke();
-        var x = 14;
-        var y = 7;
+        var x = 14, y = 7;
         for(var i = 0; i <= x; i++) {
             for(var j = 0; j<=y; j++) {
-                fill(random(['#FF6F36','#3CA1A2','#0C2845','#006C8E','#FFB029']));
-                circle(i*width/x,j*height/y,random((15*height*width)/(1290*720),(45*height*width)/(1290*720)));
+                c = new Circles(i,j,random(15,45),random(['#FF6F36','#3CA1A2','#0C2845','#006C8E','#FFB029']));
+                arr.push(c);
             }
         }
+
     }
 
     this.draw = function() {
-
+        background('#EAF0CE');
+        arr.forEach(e => {
+            e.move();
+            e.show();
+        });
         drawBox();
-
-    }
-
-    function moveCircles() {
 
     }
 
@@ -32,21 +30,27 @@ function Login() {
         fill('#FFFFFF');
         //stroke(0.1);
         noStroke();
-        rect(width*(381/1280),height*(136/720),width*(519/1280),height*(449/720),(20*height*width)/(1290*720));
+        rect1 = rect(width/2-width*(519/1280)/2,height*(136/720),width*(519/1280),height*(449/720),(20*height*width)/(1290*720));
 
         textSize((66*height*width)/(1290*720));
         textFont('Arial');
         textStyle(BOLD);
         fill('#707070');
-        text('Welcome',(473/1280)*width,(245/720)*height);
+        let str = "Welcome";
+        text(str,width/2-textWidth(str)/2,(245/720)*height);
 
         textSize((21*height*width)/(1290*720));
         textStyle(NORMAL);
-        text('What should we call you?',(508/1280)*width,300/720*height);
+        str = 'What should we call you?';
+        text(str,width/2-textWidth(str)/2,300/720*height);
 
         textBox();
 
         loginBtn();
+    }
+
+    function inputBox() {
+        
     }
 
     function textBox() {
@@ -96,7 +100,8 @@ function Login() {
 
         fill('#FFFFFF');
         textSize((21*height*width)/(1290*720));
-        text('ENTER',603/1280*width,469/720*height);
+        let str = 'ENTER';
+        text(str,width/2-textWidth(str)/2,469/720*height);
     }
 
     this.mousePressed = function() {

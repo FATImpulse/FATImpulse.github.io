@@ -18,17 +18,9 @@ function MatchingShapes() {
     let circleGlow, squareGlow, triangleGlow;
     let showCircleGlow, showSquareGlow, showTriangleGlow;
 
-    let wrongAudio, correctAudio, goalAudio, squareAlreadyPlaced, circleAlreadyPlaced, triangleAlreadyPlaced, songAlreadyPlayed;
+    let /*wrongAudio, correctAudio, goalAudio,*/ squareAlreadyPlaced, circleAlreadyPlaced, triangleAlreadyPlaced, songAlreadyPlayed;
 
-
-    this.enter = function() {
-        createCanvas(windowWidth, windowHeight);
-        
-        //RATIO USED HERE
-        //Diamater and radius
-        diameter = 100 / 800 * width;
-        radius =  diameter / 2;
-
+    this.start = function(){
         //Grid to prevent overlapping of user shapes
         ucGrid = Math.floor(random(0,3));
         usGrid = Math.floor(random(0,3));
@@ -97,6 +89,17 @@ function MatchingShapes() {
         triangleAlreadyPlaced = false;
         songAlreadyPlayed = false;
     }
+    
+    this.enter = function() {
+        createCanvas(windowWidth, windowHeight);
+        
+        //RATIO USED HERE
+        //Diamater and radius
+        diameter = 100 / 800 * width;
+        radius =  diameter / 2;
+        
+        this.start();
+    }
 
     this.draw = function() {
         background(220);
@@ -161,18 +164,27 @@ function MatchingShapes() {
             textAlign(CENTER, CENTER);
             text('You Did it!', width / 2, height / 2);
             if(songAlreadyPlayed == false){
-                goalAudio.play();
-                songAlreadyPlayed = true;
+                // mg.goalAudio.play();
+                // songAlreadyPlayed = true;
+            }
+            
+            //reset activity
+            if(mouseIsPressed){
+                this.start();
             }
         }
     }
 
-    //Adds songs
-    this.preload = function(){
-        wrongAudio = loadSound('../assets/wrongbuzzer.mp3')
-        correctAudio = loadSound('../assets/acorrectbuzzer.mp3');
-        goalAudio = loadSound('../assets/endSong.mp3');
-    }
+
+    /**
+     * Moved this function to start
+     */
+    // //Adds songs
+    // this.preload = function(){
+    //     wrongAudio = loadSound('../assets/wrongbuzzer.mp3')
+    //     correctAudio = loadSound('../assets/acorrectbuzzer.mp3');
+    //     goalAudio = loadSound('../assets/endSong.mp3');
+    // }
 
     //Checks whether user shape is on correct/incorrect goal shape, or neither
     this.mouseReleased = function(){
@@ -182,7 +194,7 @@ function MatchingShapes() {
             ucX = gcX;
             ucY = gcY;
             if(circleAlreadyPlaced == false){
-                correctAudio.play();
+                // mg.correctAudio.play();
                 circleAlreadyPlaced = true;
             }
         }
@@ -197,7 +209,7 @@ function MatchingShapes() {
                 stroke('black');
                 goalCircle.display();
                 //insert incorrect audio
-                wrongAudio.play();
+                // mg.wrongAudio.play();
         }
         else{
             showCircleGlow = false;
@@ -209,7 +221,7 @@ function MatchingShapes() {
             usX = gsX;
             usY = gsY;
             if(squareAlreadyPlaced == false){
-                correctAudio.play();
+                // correctAudio.play();
                 squareAlreadyPlaced = true;
             }
         }
@@ -223,7 +235,7 @@ function MatchingShapes() {
                 fill('white');
                 stroke('black');
                 goalSquare.display();
-                wrongAudio.play();
+                // wrongAudio.play();
         }
         else{
             showSquareGlow = false;
@@ -235,7 +247,7 @@ function MatchingShapes() {
             utX = gtX;
             utY = gtY;
             if(triangleAlreadyPlaced == false){
-                correctAudio.play();
+                // correctAudio.play();
                 triangleAlreadyPlaced = true;
             }
         }
@@ -249,7 +261,7 @@ function MatchingShapes() {
                 fill('white');
                 stroke('black');
                 goalTriangle.display();
-                wrongAudio.play();
+                // wrongAudio.play();
         }
         else{
             showTriangleGlow = false;

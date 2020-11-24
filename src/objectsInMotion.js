@@ -25,7 +25,6 @@ function ObjectsInMotion() {
         text('*be careful not to press for too long*',windowWidth/4, 75);      //Shows the users instructions on how to play and end the game
         text('Press any key to end the game', windowWidth-250,windowHeight-30); 
 
-
         fill('Crimson');                                                //Sets the objects color to crimson
         ellipse(circleX, circleY, 100, 100);                            //Draws the circle at location specified by variables
         circleX = circleX + xdirection;                                 //Updates the circle's x coordinates
