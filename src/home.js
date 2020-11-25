@@ -4,9 +4,10 @@
 
 function Home() {
 
-    var onBtn = false, onBtn1 = false, onBtn2 = false, onBtn3 = false;
+    var onBtn = false;
     var obj = MatchingShapes;
     var c, arr = [];
+    var back;
 
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);
@@ -17,6 +18,7 @@ function Home() {
                 arr.push(c);
             }
         }
+        back = new BackBtn(0,height -100,width,height);
     }
 
     this.draw = function() {
@@ -40,6 +42,10 @@ function Home() {
         }
 
         drawBox();
+
+        back.show();
+
+        //backBtn();
     }
 
     function drawBox() {
@@ -59,7 +65,7 @@ function Home() {
         drawBtn(1315/1920*width, 384/1080*height, "Zipping and Unzipping", 37, 1390);
     }
 
-    function drawBtn(x,y,z,i,j) {
+    function drawBtn(x,y,z,i) {
         var btnX = 450/1920*width, btnY = 489/1080*height, xPos = x, yPos = y;
 
         fill('#3F334D');

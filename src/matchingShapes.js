@@ -20,6 +20,8 @@ function MatchingShapes() {
 
     let /*wrongAudio, correctAudio, goalAudio,*/ squareAlreadyPlaced, circleAlreadyPlaced, triangleAlreadyPlaced, songAlreadyPlayed;
 
+    var backBtn;
+
     this.start = function(){
         //Grid to prevent overlapping of user shapes
         ucGrid = Math.floor(random(0,3));

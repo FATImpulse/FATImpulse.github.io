@@ -8,7 +8,7 @@ function Login() {
     var c;
     var arr = [];
     var mouseClicked = false;
-    let timeT = 3;
+    var timeT = 3;
 
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);
@@ -19,7 +19,6 @@ function Login() {
                 arr.push(c);
             }
         }
-
     }
 
     this.draw = function() {

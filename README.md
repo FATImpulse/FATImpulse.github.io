@@ -1,4 +1,5 @@
-# FATImpulse.github.io
+ASU FSE100 Team 6
+====================
 
 Go to https://fatimpulse.github.io to view website.
 
@@ -15,3 +16,5 @@ matchingShapes.js | Angelina Brasen | Finished
 objectsInMotion.js | April St. Onge | Finished
 start.js | John Li | Finished
 zipper.js | Aztlan Olmedo | Finished
+
+UML Structure:
