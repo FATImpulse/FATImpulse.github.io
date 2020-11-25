@@ -183,7 +183,7 @@ function MatchingShapes() {
             textSize(50);
             fill('black');
             textAlign(CENTER, CENTER);
-            text('You Did it!', width / 2, height / 2);
+            text('You Did It! Click Again to Restart', width / 2, height / 2);
             if(songAlreadyPlayed == false){
                 // mg.goalAudio.play();
                 // songAlreadyPlayed = true;
