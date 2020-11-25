@@ -210,8 +210,8 @@ function MatchingShapes() {
     //Checks whether user shape is on correct/incorrect goal shape, or neither
     this.mouseReleased = function(){
         //User circle is on correct goal shape
-        if(ucX > gcX - 25 && ucX < gcX + 25 &&
-            ucY > gcY - 25 && ucY < gcY + 25){
+        if(ucX > gcX - radius && ucX < gcX + radius &&
+            ucY > gcY - radius && ucY < gcY + radius){
             ucX = gcX;
             ucY = gcY;
             if(circleAlreadyPlaced == false){
@@ -221,10 +221,10 @@ function MatchingShapes() {
         }
         
         //User circle is on incorrect goal shape
-        if((ucX > squareCenterX - 25 && ucX < squareCenterX + 25 &&
-            ucY > squareCenterY - 25 && ucY < squareCenterY + 25) ||
-            (ucX > triangleCenterX - 25 && ucX < triangleCenterX + 25 &&
-            ucY > triangleCenterY - 25 && ucY < triangleCenterY + 25)){
+        if((ucX > squareCenterX - radius && ucX < squareCenterX + radius &&
+            ucY > squareCenterY - radius && ucY < squareCenterY + radius) ||
+            (ucX > triangleCenterX - radius && ucX < triangleCenterX + radius &&
+            ucY > triangleCenterY - radius && ucY < triangleCenterY + radius)){
                 showCircleGlow = true;
                 fill('white');
                 stroke('black');
@@ -237,8 +237,8 @@ function MatchingShapes() {
         }
         
         //User square is on correct goal shape
-        if(usX > gsX - 25 && usX < gsX + 25 &&
-            usY > gsY - 25 && usY < gsY + 25){
+        if(usX > gsX - radius && usX < gsX + radius &&
+            usY > gsY - radius && usY < gsY + radius){
             usX = gsX;
             usY = gsY;
             if(squareAlreadyPlaced == false){
@@ -248,10 +248,10 @@ function MatchingShapes() {
         }
         
         //User square is on incorrect goal shape
-        if((usX + radius > gcX - 25 && usX + radius < gcX + 25 &&
-            usY + radius > gcY - 25 && usY + radius < gcY + 25) ||
-            (usX + radius > triangleCenterX - 25 && usX + radius < triangleCenterX + 25 &&
-            usY + radius > triangleCenterY - 25 && usY + radius < triangleCenterY + 25)){
+        if((usX + radius > gcX - radius && usX + radius < gcX + radius &&
+            usY + radius > gcY - radius && usY + radius < gcY + radius) ||
+            (usX + radius > triangleCenterX - radius && usX + radius < triangleCenterX + radius &&
+            usY + radius > triangleCenterY - radius && usY + radius < triangleCenterY + radius)){
                 showSquareGlow = true;
                 fill('white');
                 stroke('black');
@@ -263,8 +263,8 @@ function MatchingShapes() {
         }
         
         //User triangle is on correct goal shape
-        if(utX > gtX - 25 && utX < gtX + 25 &&
-            utY > gtY - 25 && utY < gtY + 25){
+        if(utX > gtX - radius && utX < gtX + radius &&
+            utY > gtY - radius && utY < gtY + radius){
             utX = gtX;
             utY = gtY;
             if(triangleAlreadyPlaced == false){
@@ -274,10 +274,10 @@ function MatchingShapes() {
         }
         
         //User triangle is on incorrect goal shape
-        if((utX + radius > gcX - 25 && utX + radius < gcX + 25 &&
-            utY - radius > gcY - 25 && utY - radius < gcY + 25) ||
-            (utX + radius > squareCenterX - 25 && utX + radius < squareCenterX + 25 &&
-            utY + radius > squareCenterY - 25 && utY - radius < squareCenterY + 25)){
+        if((utX + radius > gcX - radius && utX + radius < gcX + radius &&
+            utY - radius > gcY - radius && utY - radius < gcY + radius) ||
+            (utX + radius > squareCenterX - radius && utX + radius < squareCenterX + radius &&
+            utY + radius > squareCenterY - radius && utY - radius < squareCenterY + radius)){
                 showTriangleGlow = true;
                 fill('white');
                 stroke('black');
