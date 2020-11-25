@@ -1,3 +1,7 @@
+/**
+ * @author John Li
+ */
+
 function Home() {
 
     var onBtn = false, onBtn1 = false, onBtn2 = false, onBtn3 = false;
