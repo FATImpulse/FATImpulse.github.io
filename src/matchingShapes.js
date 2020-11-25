@@ -116,15 +116,34 @@ function MatchingShapes() {
         triangleGlow = new Triangle(gtX - 25, gtY + 25, radius + 25, diameter + 50);
         
         //Display glowing shapes
-        fill('yellow');
-        stroke('yellow');
         if(showCircleGlow == true){
+            fill('yellow');
+            stroke('yellow');
+            circleGlow.display();
+        }
+        if(circleAlreadyPlaced){
+            fill('lime');
+            stroke('lime');
             circleGlow.display();
         }
         if(showSquareGlow == true){
+            fill('yellow');
+            stroke('yellow');
+            squareGlow.display();
+        }
+        if(squareAlreadyPlaced){
+            fill('lime');
+            stroke('lime');
             squareGlow.display();
         }
         if(showTriangleGlow == true){
+            fill('yellow');
+            stroke('yellow');
+            triangleGlow.display();
+        }
+        if(triangleAlreadyPlaced){
+            fill('lime');
+            stroke('lime');
             triangleGlow.display();
         }
         
