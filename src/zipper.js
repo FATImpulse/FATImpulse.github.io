@@ -10,6 +10,12 @@ function Zipper() {
   this.enter = function() {
     createCanvas(windowWidth, windowHeight);
     back = new BackBtn(Home);
+
+    // Added
+    // -- John Li
+    myBoolean3 = false;
+    myBoolean2 = false;
+    myBoolean1 = false;
   }
 
   this.draw = function() {

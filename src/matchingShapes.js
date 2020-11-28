@@ -191,8 +191,13 @@ function MatchingShapes() {
         if(circleAlreadyPlaced && triangleAlreadyPlaced && squareAlreadyPlaced){
             textSize(50);
             fill('black');
-            textAlign(CENTER, CENTER);
-            text('You Did It! Click Again to Restart', width / 2, height / 2);
+
+            // Same as above
+            // -- John Li
+            // textAlign(CENTER, CENTER);
+
+            let s = 'You Did It! Click Again to Restart';
+            text(s, width / 2 - textWidth(s)/2, height / 2);
             if(songAlreadyPlayed == false){
                 // mg.goalAudio.play();
                 // songAlreadyPlayed = true;
