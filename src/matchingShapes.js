@@ -108,7 +108,7 @@ function MatchingShapes() {
     }
 
     this.draw = function() {
-        background(220);
+        background('#EAF0CE');
         
         //Title
         textSize(70);

@@ -18,7 +18,7 @@ class BackBtn {
 
     on() {
         if(mouseX < (this.x+this.xSize) && mouseX > this.x && mouseY < (this.y + this.ySize) && mouseY > this.y) {
-            this.fill = 'black';
+            this.fill = '#3F334D';
             this.onBtn = true;
         }
         else {

@@ -23,7 +23,7 @@ function ObjectsInMotion() {
     this.draw = function() 
     {
        if(!bool) {
-         background(220);                                                       //Sets background to light grey
+         background('#EAF0CE');                                                 //Sets background color
          fill(0);                                                               //Sets fill color to black
          textSize(30);
          text('Click on the Moving Shapes',15,50);                              //Tells the user what to do in the activity

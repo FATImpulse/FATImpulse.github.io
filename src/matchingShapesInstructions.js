@@ -23,7 +23,7 @@ function MSInstructions() {
   }
 
   this.draw = function() {
-    background(220);
+    background('#EAF0CE');
     
     //left example
     //text

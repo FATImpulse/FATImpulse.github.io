@@ -1,6 +1,7 @@
 /**
  * @author John Li
  */
+var o;
 
 function Login() {
 
@@ -9,6 +10,7 @@ function Login() {
     var arr = [];
     var mouseClicked = false;
     var timeT = 3;
+    var int = 1;
 
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);
@@ -37,8 +39,10 @@ function Login() {
             isText = true;
         }
 
+        o = textField;
+
         // For testing
-        // text(iteratorI, width/2, height-50);
+        // text(textArr.length, width/2, height-50);
     }
 
     function drawBox() {
@@ -113,7 +117,7 @@ function Login() {
             fill('#3F334D');
             onBtn = true;
         }else{
-            fill('#B696DB');
+            fill('grey');
             onBtn = false;
         }
         
@@ -125,9 +129,14 @@ function Login() {
         let str = 'ENTER';
         text(str,width/2-textWidth(str)/2,469/720*height);
     }
-
+    var str;
     function errorBox() {
-        let str = "There is a 25 character limit to usernames!";
+        if(int == 1) {
+            str = "There is a 25 character limit to usernames!";
+        }
+        else if(int == 2) {
+            str = "Enter a username";
+        }
         fill('red');
         textSize((15*height*width)/(1280*720));
         text(str,width/2-textWidth(str)/2,530/720*height);
@@ -145,22 +154,23 @@ function Login() {
     }
 
     var textArr = [];
-    let rg = /\S/;
+    let rg = /./;
     var textField = "";
     var iteratorI = 0;
 
     this.keyTyped = function() {
         if(mouseClicked) {
             if(rg.test(key)) {
-                if(textArr.length <= 25) {
+                if(textArr.length < 25) {
                     if(iteratorI < 0) {
                         iteratorI = 0;
                     }
                     textArr.push(key);
-                    textField += textArr[iteratorI];
+                    //textField += textArr[iteratorI];
                     iteratorI++;
                 }
                 else {
+                    int = 1;
                     error = true;
                     timeT = 3;
                 }
@@ -172,6 +182,7 @@ function Login() {
         if(mouseClicked) {
             if(keyCode == BACKSPACE) {
                 textArr.pop();
+                textArr.length --;
                 iteratorI--;
             }
         }
@@ -190,7 +201,11 @@ function Login() {
         else if(!onTF) {
             mouseClicked = false;
         }
-        if(onBtn){
+        if(onBtn && textField === "") {
+            int = 2;
+            error = true;
+        }
+        else if(onBtn){
             this.sceneManager.showScene(Home);
         }
     }
