@@ -29,7 +29,7 @@ function Home() {
         });
 
         if(mouseX > 152/1920*width && mouseX < 152/1920*width + 450/1920*width) {
-            obj = MatchingShapes;
+            obj = MSInstructions;
         }
         if(mouseX > 735/1920*width && mouseX < 735/1920*width + 450/1920*width) {
             obj = ObjectsInMotion;
@@ -90,8 +90,8 @@ function Home() {
     }
 
     this.mousePressed = function() {
-        clear();
         if(onBtn) {
+            arr = [];
             this.sceneManager.showScene(obj);
         }
         // if(back.onBtn) {
