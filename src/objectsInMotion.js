@@ -2,6 +2,8 @@
 
 function ObjectsInMotion() {
 
+   var back;
+
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);          //Creates a canvas that fills up the entire window so the game is the correct size
         frameRate(300);
@@ -13,6 +15,7 @@ function ObjectsInMotion() {
         yCircle = 50;
         xdirection2 = 1;                               //Represent how much the objects location will change each time it moves
         ydirection2 = 2;
+        back = new BackBtn(Home);
     }
 
     this.draw = function() 
@@ -88,6 +91,15 @@ function ObjectsInMotion() {
             text('Thank you for playing!',135,100,200);   //Diplays goodbye message
             noLoop();                                     //Stops the draw function from repeating
          }
+
+         back.on();
+         back.show();
+     }
+
+     this.mousePressed = function() {
+        if(back.onBtn) {
+           this.sceneManager.showScene(back.loc);
+        }
      }
 }
 

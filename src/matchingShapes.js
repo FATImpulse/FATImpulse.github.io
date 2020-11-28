@@ -101,6 +101,10 @@ function MatchingShapes() {
         radius =  diameter / 2;
         
         this.start();
+
+        // Creates the back button object
+        // -- John Li
+        backBtn = new BackBtn(Home);
     }
 
     this.draw = function() {
@@ -109,8 +113,13 @@ function MatchingShapes() {
         //Title
         textSize(70);
         fill('black');
-        textAlign(CENTER, CENTER);
-        text('Match the Shapes!', width / 2, 50 / 800 * width);
+
+        // This messes up the home screen so I commented it out and changed the text Position
+        // -- John Li
+        // textAlign(CENTER, CENTER);
+
+        let s = "Match the Shapes!";
+        text(s, width / 2 - textWidth(s)/2, 50 / 800 * width);
         
         //Create glowing shapes
         circleGlow = new Circle(gcX, gcY, radius + 10, diameter + 50);
@@ -194,12 +203,14 @@ function MatchingShapes() {
                 this.start();
             }
         }
+
+        // Draws back button
+        // -- John Li
+        backBtn.on();
+        backBtn.show();
+
     }
 
-
-    /**
-     * Moved this function to start
-     */
     // //Adds songs
     // this.preload = function(){
     //     wrongAudio = loadSound('../assets/wrongbuzzer.mp3')
@@ -292,6 +303,9 @@ function MatchingShapes() {
     //In order of circle -> square -> triangle, the shape the mouse moves is selected
     //Cannot select a shape that is already matched
     this.mousePressed = function(){
+        if(backBtn.onBtn) {
+            this.sceneManager.showScene(backBtn.loc);
+        }
         if(mouseX > ucX - radius && mouseX < ucX + radius &&
             mouseY > ucY - radius && mouseY < ucY + radius && !circleAlreadyPlaced){
             shapeSelected = 1;
