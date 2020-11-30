@@ -31,8 +31,7 @@ function Zipper() {
           textSize(25);
           text('Try to keep it on the Zipper!', width * (55 / 600), height * (200 / 550), width * (100 / 600))
         }
-      }
-      else {
+      } else {
         background(0, 250, 200)
         fill(0)
         textSize(25)
@@ -45,7 +44,7 @@ function Zipper() {
           if ((mouseX > width * (200 / 600) && mouseX < width * (325 / 600) && mouseY < height * (385 / 550) && mouseY > height * (0 / 550))) {
             myBoolean1 = true;
           }
-
+    
         }
       }
       if (mouseY <= height * (10 / 550) && myBoolean1 == true) {
@@ -56,15 +55,15 @@ function Zipper() {
         fill(0)
         textSize(25);
         text('Awesome! Move the mouse down to the end of the zipper to complete the assignment!', width * (55 / 600), height * (180 / 550), width * (150 / 600));
-        if (mouseX < 210 || mouseX > 310) {
+        if (mouseX < width*(210/600) || mouseX > width*(310/600)) {
           background(200, 0, 200)
         fill(0)
         textSize(25);
         text('Please keep it on the zipper!', width * (55 / 600), height * (180 / 550), width * (150 / 600));
         }
       }
-    
-    
+      
+      
       if (mouseY >= height * (325 / 550) && myBoolean1 == true && myBoolean2 == true) {
         myBoolean3 = true;
         unlock = 1;

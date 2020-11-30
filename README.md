@@ -13,6 +13,7 @@ error.js | John Li | Unused
 home.js | John Li | Finished
 login.js | John Li | Finished
 matchingShapes.js | Angelina Brasen | Finished
+matchingShapesInstructions.js | Angelina Brasen | Finished
 objectsInMotion.js | April St. Onge | Finished
 start.js | John Li | Finished
 zipper.js | Aztlan Olmedo | Finished
