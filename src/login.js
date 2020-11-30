@@ -1,6 +1,10 @@
 /**
  * @author John Li
+ * 
+ * The login function constists mainly of the user input field and the Enter button
  */
+
+ // Global variable which stores the username string
 var o;
 
 function Login() {

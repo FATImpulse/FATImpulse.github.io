@@ -1,5 +1,8 @@
 /**
  * @author John Li
+ * 
+ * The Home function builds the home screen with its main function being the three buttons which takes the 
+ * user to the different activities.
  */
 
 function Home() {
@@ -10,6 +13,8 @@ function Home() {
 
     this.enter = function() {
         createCanvas(windowWidth, windowHeight);
+
+        // Constant dictating the number of rows and columns of dots
         var x = 14, y = 7;
         for(var i = 0; i <= x; i++) {
             for(var j = 0; j<=y; j++) {
@@ -57,7 +62,7 @@ function Home() {
         textSize((35*height*width)/(1920*1080));
         fill('#C0C5C1');
         rect(width/10 - (15*height*width)/(1280*720),200/1080*height - (30*height*width)/(1280*720), textWidth(str) + (30*height*width)/(1280*720), 
-            (50*height*width)/(1280*720),(35*height*width)/(1280*720));
+            (50*height*width)/(1280*720),(15*height*width)/(1280*720));
         fill('#707070');
         text(str,width/10,200/1080*height);
 
