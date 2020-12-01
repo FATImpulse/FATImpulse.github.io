@@ -1,14 +1,19 @@
 /**
- * @author John Li
- * @constructor **x position, y position, radius, fill**
- * 
  * The **circles** object has two main methods: *move()* and *show()*. *move()* moves the circle object
  * based on the mouse position in relation to the circles object's position. *show()* creates a circle shape based on the p5.js 
  * library.
+ * @constructor **x coordinate, y coordinate, radius, fill**
+ * @author John Li
  */
 
 class Circles {
 
+    /**
+     * @param {number} x 
+     * @param {number} y 
+     * @param {number} r 
+     * @param {string} fill 
+     */
     constructor(x,y,r,fill) {
 
         this.widthX = 14;
@@ -44,7 +49,10 @@ class Circles {
     getArr() {
         return this.arr;
     }
-
+    /**
+     * Sets the position of the circle objects to a position based on following formula
+     * took me a very very long time to perfect this formula but I'm pleased with how it turned out
+     */
     move() {
         if(mouseX < (this.x2 + this.r2) && mouseX > (this.x2 - this.r2) && mouseY < (this.y2 + this.r2) && mouseY > (this.y2 - this.r2)) {
             str = mouseX + " " + mouseY;
@@ -79,8 +87,6 @@ class Circles {
             // tempX = constrain(tempX,-(this.r*2)+this.x2,this.r*2+this.x2);
             // tempY = constrain(tempY,-(this.r*2)+this.y2,this.r*2+this.y2);
 
-            // sets the position of the circle objects to a position based on following formula
-            // took me a very very long time to perfect this formula but I'm pleased with how it turned out
             this.x = constrain(this.easing*dirX*(1-(mouseX/width))*this.x2 + this.x2,-(this.r*2)+this.x2,this.r*2+this.x2);
             this.y = constrain(this.easing*dirY*(1-(mouseY/height))*this.y2 + this.y2,-(this.r*2)+this.y2,this.r*2+this.y2);
         }
@@ -95,9 +101,10 @@ class Circles {
         }
     }
 
+    /**
+     * Creates the circle object on the screen
+     */
     show() {
-
-        // creates the circle object on the screen
         fill(this.fill)
         circle(this.x,this.y,this.r);
     }

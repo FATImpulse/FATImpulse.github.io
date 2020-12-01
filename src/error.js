@@ -1,9 +1,8 @@
 
 /**
- * @author John Li
- * 
  * Unused class. Originally this was supposed to run in case there are errors during runtime.
  * Unfortunately, I don't have the time to implement this throughout all the .js scripts.
+ * @author John Li
  */
 
 class Error {
@@ -20,7 +19,6 @@ class Error {
         this.x = x;
     }
 
-    //I don't think this works
     getStr() {
         return this.str[this.x];
     }

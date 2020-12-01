@@ -101,7 +101,7 @@ function Zipper() {
       }
       let c = color(250, 250, 0)
       fill(c);
-      rect(mouseX - height * (83 / 600), mouseY - height * (35 / 550), width * (100 / 600), width * (100 / 600), height * (20 / 550));
+      rect(mouseX - width * (100 / 600)/2, mouseY - height * (35 / 550), width * (100 / 600), width * (100 / 600), height * (20 / 550));
 
       rect(mouseX - width * (25 / 600), mouseY - height * (15 / 550), width * (50 / 600), width * (160 / 600), height * (20 / 550));
 

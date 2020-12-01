@@ -1,10 +1,14 @@
 /**
+ * Creates the back button which takes a location and switches scenes to that location.
+ * @constructor **location**
  * @author John Li
- * @constructor **function name, x position, y position**
  */
 
 class BackBtn {
 
+    /**
+     * @param {function} loc 
+     */
     constructor(loc) {
         this.loc = loc;
         this.x = 0;
@@ -16,6 +20,9 @@ class BackBtn {
         this.fill = 'grey';
     }
 
+    /**
+     * Changes the color of the button and sets onBtn to true if the mouse is on it
+     */
     on() {
         if(mouseX < (this.x+this.xSize) && mouseX > this.x && mouseY < (this.y + this.ySize) && mouseY > this.y) {
             this.fill = '#3F334D';
@@ -27,6 +34,9 @@ class BackBtn {
         }
     }
 
+    /**
+     * Creates the back button with the < text
+     */
     show() {
         noStroke();
         fill(this.fill);
