@@ -66,12 +66,17 @@ function Home() {
         textSize((150*height*width)/(1920*1080));
         let str = 'Play Room';
         text(str,width/2-textWidth(str)/2,250/1080*height);
+
         str = o;
         textSize((35*height*width)/(1920*1080));
-        fill('#C0C5C1');
-        rect(width/10 - (15*height*width)/(1280*720),200/1080*height - (30*height*width)/(1280*720), textWidth(str) + (30*height*width)/(1280*720), 
-            (50*height*width)/(1280*720),(15*height*width)/(1280*720));
-        fill('#707070');
+        fill('#242423');
+        // width/10 - (30*height*width)/(1280*720)
+        // 200/1080*height - (30*height*width)/(1280*720)
+        rect( width/10 - (30*height*width)/(1280*720), 200/1080*height - (30*height*width)/(1280*720), textWidth(str) + (60*height*width)/(1280*720), 
+            (50*height*width)/(1280*720),(30*height*width)/(1280*720));
+        fill('white');
+        // width/10
+        // 200/1080*height
         text(str,width/10,200/1080*height);
 
         drawBtn(152/1920*width, 384/1080*height, "Matching Shapes", 40, 1);
