@@ -6,7 +6,7 @@ function Zipper() {
 
   var back;
 
-  //next time you open this, try to make it so that the code will give 2 different prompts when 
+  //set up the booleans and key to unlock the final prompt
   this.enter = function() {
     createCanvas(windowWidth, windowHeight);
     back = new BackBtn(Home);
@@ -18,6 +18,9 @@ function Zipper() {
     myBoolean1 = false;
   }
 
+  //generate the prompts and feedback before the zipper to keep the zipper in focus for the majority of the activity
+  
+  //create a default display and displays based on the position of the mouse, and if the mouse is pressed or not
   this.draw = function() {
     if(!back.onBtn) {
       if (mouseX < width * (200 / 600) || mouseX > width * (325 / 600) || mouseY > height * (385 / 550) || mouseY < height * (0 / 550)) {
@@ -31,7 +34,9 @@ function Zipper() {
           textSize(25);
           text('Try to keep it on the Zipper!', width * (55 / 600), height * (200 / 550), width * (100 / 600))
         }
-      } else {
+      } 
+      //create the prompts for when the instructions are followed
+      else {
         background(0, 250, 200)
         fill(0)
         textSize(25)
@@ -69,9 +74,10 @@ function Zipper() {
         unlock = 1;
       }
     
-
+      //create the material portion of the zipper
       fill(0);
       rect(width * (200 / 600), height * (0 / 550), width * (125 / 600), height * (450 / 550));
+      //create the actual zipper portions
       stroke('black');
       fill(150);
       rect(width * (200 / 600), height * (0 / 550), width * (75 / 600), height * (25 / 550));
@@ -92,13 +98,16 @@ function Zipper() {
       rect(width * (250 / 600), height * (375 / 550), width * (75 / 600), height * (25 / 550));
       rect(width * (200 / 600), height * (400 / 550), width * (75 / 600), height * (25 / 550));
       rect(width * (250 / 600), height * (425 / 550), width * (75 / 600), height * (25 / 550));
-      rect(width * (200 / 600), height * (450 / 550), width * (125 / 600), height * (325 / 550))
+      rect(width * (200 / 600), height * (450 / 550), width * (125 / 600), height * (325 / 550));
+
+      //generate the final prompt/display after the others have been completed
       if (myBoolean3 == true&& unlock == 1) {
         background(0, 250, 250);
         fill(0);
         textSize(50);
         text('Congratulations!', width * (125 / 600), height * (180 / 550), width * (100 / 600));
       }
+      // generate the slider in a color that stands out and always remains in the foreground,
       let c = color(250, 250, 0)
       fill(c);
       rect(mouseX - width * (100 / 600)/2, mouseY - height * (35 / 550), width * (100 / 600), width * (100 / 600), height * (20 / 550));
