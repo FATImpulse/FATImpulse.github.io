@@ -1,7 +1,7 @@
 ASU FSE100 Team 6
 ====================
 
-Go to https://fatimpulse.github.io to view project.
+Go to https://johnjli.github.io to view project.
 
 Javascript Files in Decending Order: 
 
